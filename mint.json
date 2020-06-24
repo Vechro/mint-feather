@@ -2,11 +2,5 @@
     "name": "mint-feather",
     "source-directories": [
         "source"
-    ],
-    "test-directories": [
-        "tests"
-    ],
-    "formatter": {
-        "indent-size": 4
-    }
+    ]
 }
