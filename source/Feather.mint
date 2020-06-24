@@ -13,10 +13,10 @@ enum Linejoin.Type {
 }
 
 record Attributes {
-  width : Number,
-  height : Number,
+  width : String,
+  height : String,
   stroke : String,
-  strokeWidth : Number,
+  strokeWidth : String,
   strokeLinecap : Linecap.Type,
   strokeLinejoin : Linejoin.Type,
   viewBox : String
@@ -330,10 +330,10 @@ component Feather {
 
   property attributes : Attributes =
     {
-      width = 24,
-      height = 24,
+      width = "100%",
+      height = "100%",
       stroke = "currentColor",
-      strokeWidth = 2,
+      strokeWidth = "2",
       strokeLinecap = Linecap.Type::Round,
       strokeLinejoin = Linejoin.Type::Round,
       viewBox = "0 0 24 24"
@@ -344,21 +344,12 @@ component Feather {
   fun render : Html {
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={
-        attributes.width
-        |> Number.toString
-      }
-      height={
-        attributes.height
-        |> Number.toString
-      }
+      width={attributes.width}
+      height={attributes.height}
       viewBox={attributes.viewBox}
       fill="none"
       stroke={attributes.stroke}
-      stroke-width={
-        attributes.strokeWidth
-        |> Number.toString
-      }
+      stroke-width={attributes.strokeWidth}
       stroke-linecap={
         attributes.strokeLinecap
         |> linecapToString
